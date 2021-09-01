@@ -11,6 +11,7 @@ The general idea for this process is to gain an understanding of the key differe
 - Learned about the **getindex** function and how to use in combination with **argmax**.
 - Learned how to create a mask with respect to arrays, quite useful. 
 - Finished the numbers exercise (Lecture 3) and learned about the [Decimals.jl](https://github.com/JuliaMath/Decimals.jl) package.
-- Started lecture on types. This might be somewhat different from how Julia thinks about types. Will think about differences.  
+- Read through the lecture on types (Lecture 4). All of this is pretty standard and easy to implement in Julia. have worked through this type of material before, so nothing surprising. 
+- The **!** operator works on Booleans, functions and missing values. Similar to **not** in Python when it comes to Boolean values. Its operation on functions is mutation, if I remember correctly. 
 
 ## Day 2
