@@ -9,23 +9,19 @@ Numbers
 @date: 2021-09-01
 
 =#
+using Decimals
 
-struct params
-    interest
-    compounding
-    investment
-    t
-end
+function compound_interest(interest, compounding, investment, t)
 
-p1 = params(0.04, 365, 1000, 10)
-p2 = params(0.04, 354 * 24, 10e9, 100)
-
-function compound_interest(p::params)
-
-    daily = 1 + p.interest / p.compounding
-    dsum = p.investment * (daily ^ (p.compounding) * p.t)
+    daily = 1 + interest / compounding
+    dsum = investment * (daily ^ (compounding) * t)
 
     return dsum
 
 end
 
+p1 = compound_interest(0.04, 365, 1000, 10)
+p2 = compound_interest(0.04, 365 * 24, 10e9, 100)
+p3 = compound_interest(Decimal(0.04), 365 * 24, Decimal(10e9), 100)
+
+diff = number(p3) - p2
