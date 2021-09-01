@@ -1,7 +1,7 @@
 
-# Foundations of Computational Economics (30 day challenge)
+# Foundations of Computational Economics
 
-This is a repository where I translate the code of Fedor Iskhakov's [Foundations of Computational Economics](https://fedor.iskh.me/compecon) from Python to Julia. The goal is to do this within 30 days. I will try and journal my progress as far as possible. 
+This is a repository where I translate the code of Fedor Iskhakov's [Foundations of Computational Economics](https://fedor.iskh.me/compecon) from Python to Julia. The goal is to do this **within 30 days**. This will be done in the month of September. I will try and journal my progress as far as possible. 
 
 ## Day 1
 
