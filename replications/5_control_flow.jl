@@ -13,7 +13,7 @@ Control flow, user defined functions.
 
 # If-then-else in Julia (wrapped in functions)
 
-function ifelse_1()
+function if_else_1()
 
     x = 2
     y = 2.0
@@ -28,7 +28,7 @@ function ifelse_1()
     end
 end
 
-function ifelse_2()
+function if_else_2()
 
     x = true
     y = false
@@ -46,4 +46,4 @@ function ifelse_2()
     end
 end
 
-ifelse_2()
+if_else_2()
