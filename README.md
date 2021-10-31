@@ -16,4 +16,7 @@ The general idea for this process is to gain an understanding of the key differe
 
 ## Day 2 (31 October 2021)
 
- 
+Started with the session on function approximation. Have worked through much of this material in other courses before. 
+
+- Learned how to construct helper functions for plotting.
+- Learned about the different types of interpolation packages in Julia, which includes [Interpolations.jl](https://github.com/JuliaMath/Interpolations.jl). 
