@@ -3,7 +3,7 @@
 
 This is a repository where I translate the code of Fedor Iskhakov's [Foundations of Computational Economics](https://fedor.iskh.me/compecon) from Python to Julia. The goal is to do this **within 30 days**. This will be done in the month of October after the workshop. I will try and journal my progress as far as possible. 
 
-## Day 1
+## Session 1
 
 The general idea for this process is to gain an understanding of the key differences between Python and Julia, while also learning some new computational methods along the way. I will also try and track my hours for this, so that I don't spend too much time solving problems.  
 
@@ -14,9 +14,15 @@ The general idea for this process is to gain an understanding of the key differe
 - Read through the lecture on types (Lecture 4). All of this is pretty standard and easy to implement in Julia. have worked through this type of material before, so nothing surprising. 
 - The **!** operator works on Booleans, functions and missing values. Similar to **not** in Python when it comes to Boolean values. Its operation on functions is mutation, if I remember correctly. 
 
-## Day 2 (31 October 2021)
+## Session 2
 
 Started with the session on function approximation. Have worked through much of this material in other courses before. 
 
 - Learned how to construct helper functions for plotting.
 - Learned about the different types of interpolation packages in Julia, which includes [Interpolations.jl](https://github.com/JuliaMath/Interpolations.jl). 
+
+## Session 3
+
+Started with the session on the cake eating problem with discretized choice (Lecture 32)
+
+- Learned about the Julia implementation of `np.newaxis`. In the creation of the consumption matrix, only had to broadcast on the transpose of the matrix. 
