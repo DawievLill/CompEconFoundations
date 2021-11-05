@@ -25,4 +25,4 @@ Started with the session on function approximation. Have worked through much of 
 
 Started with the session on the cake eating problem with discretized choice (Lecture 32)
 
-- Learned about the Julia implementation of `np.newaxis`. In the creation of the consumption matrix, only had to broadcast on the transpose of the matrix. 
+- Learned about the Julia implementation of `np.newaxis`. In the creation of the consumption matrix, only had to broadcast on the transpose of the matrix. Much easier than the previous way that I tried to do this in Lecture 30.
