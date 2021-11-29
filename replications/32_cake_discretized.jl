@@ -30,7 +30,7 @@ using Parameters
 @with_kw struct Params
 
     β = 0.9
-    Wbar = 10
+    Wbar = 10 # upper bound of the cake-size grid 
     ngrid = 50
     nchgrid = 100 # number of grid points for choice grid
     ε = eps()
@@ -43,12 +43,16 @@ end
 
 p = Params()
 
-# We start with the solution on the grid, as developed in Lecture 30. 
+### Cake eating with discretized choice
 
-# Bellman operator (V0 is one dimensional vector of values on the grid)
+# Grid over state space separately from discretization of the choice variables. 
+# Discretise both the state space and decision space. 
+
 function bellman(p::Params)
-    @unpack grid, ε, ngrid, β, Wbar = p
+    @unpack grid, chgrid, ε, ngrid, β, Wbar = p
     
+    c = transpose(chgrid) # This is now a column vector
+
     c = grid .- transpose(grid) # np.newaxis creates a column vector in this line
     # c = grid .- reshape(grid, (1, ngrid)) # alternative way to do the same thing as above
 
@@ -84,6 +88,7 @@ function solve(p::Params)
     return V1, c1
 end
 
+# This function compares the analytic and numerical solution via plots. 
 function check_analytic(p::Params)
     @unpack grid, ε, ngrid, β, Wbar, grid, maxiter, tol = p
 
@@ -95,43 +100,12 @@ function check_analytic(p::Params)
 
     V, policy = solve(p)
 
-    # Generate the appropriate plots to compare solutions
-    # plot(grid, V)
-    # plot(xg, aV[xg])
-    # plot(grid, policy)
-    # plot(grid, aP[grid])
+    # See the plots documentation for generating subplots. 
+    plot(grid, V)
+    plot(xg, aV(xg))
+    plot(grid, policy)
+    plot(grid, aP(grid))
 
 end
 
 
-### Cake eating with discretized choice
-
-# Grid over state space separtely from discretization of the choice variables. 
-# Discretize both the state space and decision space. 
-
-### Fill out this section
-function new_bellman(p::Params, optim_ch = true)
-    @unpack grid, ε, ngrid, nchgrid, β, Wbar, grid, chgrid, maxiter, tol = p
-
-    c = chgrid .- transpose(chgrid)
-    if optim_ch
-        c = c .+ zeros(ngrid) # matrix of consumption values
-        c = c .* (grid / Wbar) # scale choices to ensure that c < W
-    end
-
-    W = grid # one-dimensional
-
-    interp = LinearInterpolation()
-
-    matV1 = log(c) + β * interp(W - c)
-    matV1[c .> W] = -Inf
-    V1 = argmax(matV1, dims = 2)
-
-    if optim_ch
-        c1 = c[]
-    else
-        c1 = c[]
-    end
-
-    return V1, c1
-end
