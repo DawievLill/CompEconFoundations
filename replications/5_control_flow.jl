@@ -46,4 +46,30 @@ function if_else_2()
     end
 end
 
-if_else_2()
+# Ternary operator
+
+a, b, condition = 1, 3, true
+c = condition ? a : b
+
+# Flow Control
+
+for i in [0, 1, 2, 3, 4, 5]
+    println("A iteration $i")
+end
+
+for j in 1:5
+    println("B iteration $j")
+end
+
+# Array comprehensions
+
+x = []
+for k in 0:14
+    if k % 3 == 0
+        append!(x, k)
+    end
+end
+x
+
+x = [k for k in 0:14 if k % 3 == 0] # Much easier for in some cases. 
+

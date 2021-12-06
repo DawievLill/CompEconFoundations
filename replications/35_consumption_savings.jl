@@ -1,7 +1,7 @@
 
 #=
 
-LECTURE 35
+LECTURE 35: Part 1
 
 Stochastic consumption-savings model with discretized choice. 
 
@@ -66,4 +66,17 @@ function quadrature_setup(p::Params)
 
 end
 
+function interp_function(p::Params)
+    @unpack 
+
+    if interpolation == "linear"
+        return
+    elseif interpolation == "quadratic"
+        return
+    elseif interpolation == "cubic"
+        return
+    elseif interpolation == "polynomial"
+    
+    end
+end
 
