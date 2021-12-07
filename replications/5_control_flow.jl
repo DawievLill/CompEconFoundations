@@ -73,3 +73,62 @@ x
 
 x = [k for k in 0:14 if k % 3 == 0] # Much easier for in some cases. 
 
+# Multiple indexes
+
+for (i, j) in zip(0:3, ["a", "b", "c", "d"])
+    println("i = $i and  j = $j")
+end
+
+p = [x ^ y for x in (2, 3, 5) for y in 0:4]
+
+# For else (come back to this)
+# k = 0
+# for i in 0:99
+    
+#     if k > 15
+#         break
+#     else 
+#         println("I went all the way up to $i")
+#     end
+    
+#     if i % 5 == 0
+#         k += 1
+#     else
+#         println("Loop complete with k = $k and i = $i")
+#     end
+# end
+
+# Sieve of Erastothenes example to find prime numbers
+
+upper = 23
+primes = [i for i in 1:(upper+1)]
+divisor = 1
+
+while true
+
+    divisor += 1
+
+    if divisor > upper
+        break
+    end
+
+    if divisor ∉ primes
+        continue
+    end
+
+    i = 1
+
+    while i < length(primes)
+        if primes[i] != divisor & primes[i] % divisor == 0
+            deleteat!(primes, primes[i]) # Have to think on this line. This is the crucial step. 
+        else
+            i += 1
+        end
+        println("Divisor: ", divisor, primes)
+    end
+end
+
+
+
+
+
