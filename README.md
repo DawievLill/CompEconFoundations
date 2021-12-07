@@ -1,7 +1,7 @@
 
 # Foundations of Computational Economics
 
-This is a repository where I translate the code of Fedor Iskhakov's [Foundations of Computational Economics](https://fedor.iskh.me/compecon) from Python to Julia. The goal is to do this **within 30 days**. This will be done in the month of October after the workshop. I will try and journal my progress as far as possible. 
+This is a repository where I translate the code of Fedor Iskhakov's [Foundations of Computational Economics](https://fedor.iskh.me/compecon) from Python to Julia. I will try and journal progress as far as possible. This is very much a side project, so it will probably take longer than anticipated.  
 
 ## Session 1
 
@@ -28,3 +28,9 @@ Started with the session on the cake eating problem with discretized choice (Lec
 - Learned about the Julia implementation of `np.newaxis`. In the creation of the consumption matrix, only had to broadcast on the transpose of the matrix. Much easier than the previous way that I tried to do this in Lecture 30.
 - Basic structure of Lecture 32 laid out. TODO: Complete Lecture 32.
 - Started with Lecture 35, skipped Lecture 33 and 34 for now. However, will come back to these.  
+
+## Session 4
+
+Trying to cover some of the earlier sessions. Most of the first few sessions are quite easy. There are many similarities between Python and Julia. Should not conceptually be difficult for someone to switch between the languages. 
+
+
