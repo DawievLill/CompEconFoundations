@@ -25,7 +25,14 @@ function fibonacci_procedural(n; fst = 1, sec = 1)
 end
 
 # Functional programming (not right at the moment, think this through)
-fibonacci_functional(n, first, second) = ifelse(n == 0, [], [first] + fibonacci_functional(n - 1, second, first + second))
+function fibonacci_functional(n, first, second)
+     
+    if n == 0
+        return [] # return empty list
+    else
+        return [first] + fibonacci_functional(n - 1, second, first + second)
+    end
+end
 
 # Object oriented programming
 struct fibonacci
@@ -34,6 +41,8 @@ struct fibonacci
     n::Int64
 end
 
+
+# This is an outer constructor, could also use inner constructor within the struct. 
 function fib_series(x::fibonacci)
     f = zeros(x.n)
     f[1], f[2] = x.first, x.second
@@ -44,7 +53,7 @@ function fib_series(x::fibonacci)
     return f
 end
 
-example = fibonacci(1, 1, 5)
+example = fibonacci(1, 1, 5) # Instance of the fibonnacy struct
 fib_series(example)
 fib_series(fibonacci(1, 1, 10))
 
