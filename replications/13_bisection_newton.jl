@@ -12,6 +12,8 @@ Here we look at solving equations of one variable
 
 =#
 
+using ForwardDiff # Use forward mode automatic differentiation
+
 function bisection(f; a = -3, b = -0.5, tol = 1e-6, maxiter = 100, callback = nothing)
 
     # The assertion error works here as expected. 
@@ -45,3 +47,29 @@ end
 
 # This code works (easy to read as well)
 bisection(x -> -4x^3 + 5x + 1)
+
+
+# The next step is to solve problems using Newton's methods
+
+# We can derive Newton's method using Taylor series expansion
+
+function newton(f, x_0, tol = 1e-6, maxiter = 100)
+
+    for i in 1:maxiter
+
+        grad = ForwardDiff.derivative(f, x_0)
+
+        x_1 = x_0 - f(x_0) / grad
+
+        err = abs(x_1 - x_0)
+
+        if err < tol
+            return (x_0 + x_1) / 2
+        else
+            x0 = x_1
+        end
+    end
+end
+
+# Check tomorrow whether we can get this working. Shouldn't be too difficult. 
+        
